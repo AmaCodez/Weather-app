@@ -1,1 +1,3 @@
-console.log("I work");
+import "./styles.css";
+
+console.log("js workss");
