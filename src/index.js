@@ -10,21 +10,40 @@ async function getWeather(location) {
   const respond = await fetch(url, { mode: "cors" });
   const unwrapData = await respond.json();
   console.log(unwrapData);
-  //   console.log(`Conditions: ${unwrapData.days[0].conditions}`);
-  //   console.log(`Temp: ${unwrapData.days[0].temp}`);
-  //   console.log(`Tempmax: ${unwrapData.days[0].tempmax}`);
-  //   console.log(`Tempmin: ${unwrapData.days[0].tempmin}`);
   return unwrapData;
 }
 
 //   Collect needed data
+// function extractWeather(data) {
+//   return {
+//     conditions: data.currentConditions.conditions,
+//     temp: data.currentConditions.temp,
+//     tempmax: data.days[0].tempmax,
+//     tempmin: data.days[0].tempmin,
+//   };
+// }
+
 function extractWeather(data) {
-  return {
-    conditions: data.currentConditions.conditions,
-    temp: data.currentConditions.temp,
-    tempmax: data.days[0].tempmax,
-    tempmin: data.days[0].tempmin,
-  };
+  return [
+    {
+      conditions: data.days[0].conditions,
+      temp: data.days[0].temp,
+      tempmax: data.days[0].tempmax,
+      tempmin: data.days[0].tempmin,
+    },
+    {
+      conditions: data.days[1].conditions,
+      temp: data.days[1].temp,
+      tempmax: data.days[1].tempmax,
+      tempmin: data.days[1].tempmin,
+    },
+    {
+      conditions: data.days[2].conditions,
+      temp: data.days[2].temp,
+      tempmax: data.days[2].tempmax,
+      tempmin: data.days[2].tempmin,
+    },
+  ];
 }
 
 searchBtn.addEventListener("click", async () => {
