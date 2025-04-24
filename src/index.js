@@ -15,26 +15,17 @@ async function getWeather(location) {
 
 //   Collect needed data
 function extractWeather(data) {
-  return [
-    {
-      conditions: data.days[0].conditions,
-      temp: data.days[0].temp,
-      tempmax: data.days[0].tempmax,
-      tempmin: data.days[0].tempmin,
-    },
-    {
-      conditions: data.days[1].conditions,
-      temp: data.days[1].temp,
-      tempmax: data.days[1].tempmax,
-      tempmin: data.days[1].tempmin,
-    },
-    {
-      conditions: data.days[2].conditions,
-      temp: data.days[2].temp,
-      tempmax: data.days[2].tempmax,
-      tempmin: data.days[2].tempmin,
-    },
-  ];
+  return data.days.slice(0, 3).map((day) => {
+    const dateObj = new Date(day.datetime);
+    const shortDay = dateObj.toLocaleDateString("en-US", { weekday: "short" });
+    return {
+      day,
+      conditions: day.conditions,
+      temp: day.temp,
+      tempmin: day.tempmin,
+      tempmax: day.tempmax,
+    };
+  });
 }
 
 searchBtn.addEventListener("click", async () => {
@@ -43,7 +34,9 @@ searchBtn.addEventListener("click", async () => {
     const searchValue = input.value;
     const rawData = await getWeather(searchValue);
     const summary = extractWeather(rawData);
+    const locationSite = rawData.resolvedAddress;
     console.log(`Weather summary:`, summary);
+    console.log(locationSite);
   } catch (error) {
     console.log(`Oh oh ${error.message}`);
   }
