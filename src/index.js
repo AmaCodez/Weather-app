@@ -14,15 +14,6 @@ async function getWeather(location) {
 }
 
 //   Collect needed data
-// function extractWeather(data) {
-//   return {
-//     conditions: data.currentConditions.conditions,
-//     temp: data.currentConditions.temp,
-//     tempmax: data.days[0].tempmax,
-//     tempmin: data.days[0].tempmin,
-//   };
-// }
-
 function extractWeather(data) {
   return [
     {
