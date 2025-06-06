@@ -47,4 +47,142 @@ input[type="text"] {
 /* header */
 .header {
   border: var(--border-check);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10vw;
+}
+.logo {
+  width: auto;
+  height: 10vh;
+}
+
+.weather-title {
+  border: var(--border-check);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-name {
+  font-size: 1.9rem;
+  letter-spacing: 0.2rem;
+}
+
+.weather-name p:first-child {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.weather-name :nth-child(2) {
+  letter-spacing: 0.5rem;
+}
+
+.date-time {
+  border: var(--border-check);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+/*Container*/
+.container {
+  border: var(--border-check);
+  margin: 40px 100px;
+  padding: 20px 45px;
+}
+
+.location-title {
+  border: var(--border-check);
+  font-size: 1.4rem;
+  padding: 5px;
+}
+
+.weather-card {
+  border: var(--border-check);
+  margin-top: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 5px;
+  width: 100%;
+}
+
+/*Card*/
+.card {
+  border: 1px solid blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  aspect-ratio: 3 / 4;
+}
+
+.card-day {
+  font-size: 2rem;
+}
+
+.card-img {
+  border: var(--border-check);
+  width: 10vw;
+  height: 15vh;
+}
+
+.card-condition {
+  font-size: 1.8rem;
+}
+
+.card-temp {
+  border: var(--border-check);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.low,
+.high {
+  font-size: 1.2rem;
+}
+
+/* toggle */
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  background-color: gray;
+  width: 55px;
+  height: 30px;
+  border-radius: 200px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  background-color: black;
+  width: 25px;
+  height: 25px;
+  border-radius: 200px;
+  margin: 2px;
+  transition: 0.2s;
+}
+
+input:checked + .button {
+  background-color: blue;
+}
+input:checked + .button::before {
+  transform: translateX(25px);
+}
+#check {
+  display: none;
 }
