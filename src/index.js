@@ -1,7 +1,7 @@
 import "./styles.css";
-import rainIcon from "../assets/image/rain.png";
-import sunnyIcon from "../assets/image/sunny.png";
-import cloudyIcon from "../assets/image/cloudy.png";
+import rainIcon from "../assets/image/rainy.png";
+import sunnyIcon from "../assets/image/sunnyIcon.png";
+import cloudyIcon from "../assets/image/cloudyIcon.png";
 
 const input = document.querySelector("input");
 const searchBtn = document.querySelector(".searchbtn");

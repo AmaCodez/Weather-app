@@ -1,5 +1,6 @@
 :root {
   --border-check: 1px solid black;
+  --background-color: #000b58;
 }
 * {
   margin: 0;
@@ -18,7 +19,6 @@ svg {
 
 /* Search bar and toggle*/
 .search-toggle {
-  border: var(--border-check);
   margin-bottom: 4vh;
   padding: 15px 50px;
   display: flex;
@@ -26,7 +26,6 @@ svg {
 }
 
 .search {
-  /* border: var(--border-check); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,7 +50,9 @@ input[type="text"] {
 
 /* header */
 .header {
-  border: var(--border-check);
+  background-color: var(--background-color);
+  opacity: 0.8;
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,7 +64,6 @@ input[type="text"] {
 }
 
 .weather-title {
-  border: var(--border-check);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,6 @@ input[type="text"] {
 }
 
 .date-time {
-  border: var(--border-check);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,23 +92,24 @@ input[type="text"] {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
 /*Container*/
 .container {
-  border: var(--border-check);
   margin: 40px 100px;
   padding: 20px 45px;
 }
 
 .location-title {
-  border: var(--border-check);
-  font-size: 1.4rem;
+  background-color: var(--background-color);
+  opacity: 0.8;
+  color: white;
+  font-size: 1.8rem;
   padding: 5px;
 }
 
 .weather-card {
-  border: var(--border-check);
   margin-top: 5px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -119,7 +119,9 @@ input[type="text"] {
 
 /*Card*/
 .card {
-  border: 1px solid blueviolet;
+  background-color: var(--background-color);
+  opacity: 0.8;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -128,31 +130,29 @@ input[type="text"] {
 }
 
 .card-day {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .card-img {
-  border: var(--border-check);
-  width: 10vw;
-  height: 15vh;
+  width: 15vw;
+  height: 20vh;
 }
 
 .card-condition {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 .card-temp {
-  border: var(--border-check);
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   text-align: center;
 }
 
 .low,
 .high {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 /* toggle */
@@ -183,7 +183,7 @@ input[type="text"] {
 }
 
 input:checked + .button {
-  background-color: blue;
+  background-color: var(--background-color);
 }
 input:checked + .button::before {
   transform: translateX(25px);
